@@ -1,33 +1,47 @@
-import react from "react";
+import React from "react";
 import { View, Text, FlatList } from "react-native";
 import StyledText from "./StyledText";
 
-const parseThousands = value => {
-    return value >= 1000
-    ? `${Math.round(value / 100) / 10}k`
-    : String(value)
-}
+const parseThousands = (value) => {
+  return value >= 1000 ? `${Math.round(value / 100) / 10}k` : String(value);
+};
 const RepositoryStats = (props) => {
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
       <View>
-        <StyledText align='center' fontWeight='bold'>Forks:</StyledText>
-        <StyledText align='center'>{parseThousands(props.forksCount)}</StyledText>
+        <StyledText align="center" fontWeight="bold">
+          Forks:
+        </StyledText>
+        <StyledText align="center">
+          {parseThousands(props.forksCount)}
+        </StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>Stars:</StyledText>
-        <StyledText align='center'>{parseThousands(props.stargazersCount)}</StyledText>
+        <StyledText align="center" fontWeight="bold">
+          Stars:
+        </StyledText>
+        <StyledText align="center">
+          {parseThousands(props.stargazersCount)}
+        </StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>Rating:</StyledText>
-        <StyledText align='center'>{parseThousands(props.ratingAverage)}</StyledText>
+        <StyledText align="center" fontWeight="bold">
+          Rating:
+        </StyledText>
+        <StyledText align="center">
+          {parseThousands(props.ratingAverage)}
+        </StyledText>
       </View>
       <View>
-        <StyledText align='center' fontWeight='bold'>ReviewCount:</StyledText>
-        <StyledText align='center'>{parseThousands(props.reviewCount)}</StyledText>
+        <StyledText align="center" fontWeight="bold">
+          ReviewCount:
+        </StyledText>
+        <StyledText align="center">
+          {parseThousands(props.reviewCount)}
+        </StyledText>
       </View>
     </View>
   );
-}
+};
 
-export default RepositoryStats
+export default RepositoryStats;
